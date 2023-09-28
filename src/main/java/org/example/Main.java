@@ -16,11 +16,35 @@ public class Main {
 
         Afiliado afiliado = new Afiliado();
 
-        System.out.println("Digita el id del usuario");
+        System.out.println("digita su nombre: ");
+        afiliado.setNombres(entradaTeclado.nextLine());
+
+        System.out.println("Digite sus apellidos");
+        afiliado.setApellidos(entradaTeclado.nextLine());
+
+        System.out.println("Digite su documento: ");
+        afiliado.setDocumento(entradaTeclado.nextLine());
+
+        System.out.println("Digite su correo electronico (ejemplo12345@correo.com): ");
+        afiliado.setCorreoElectronico(entradaTeclado.nextLine());
+
+        System.out.println("Digite su telefono: ");
+        afiliado.setTelefono(entradaTeclado.nextLine());
+
+        System.out.println("Digite su fecha de nacimiento: ");
+        afiliado.setFechaNacimiento(LocalDate.now());
+
+        System.out.println("Digita su id de usuario: ");
         afiliado.setId(entradaTeclado.nextInt());
 
-        System.out.println("digita el nombre:");
-        afiliado.setNombres(entradaTeclado.next());
+        System.out.println("Escoja su ciudad: ");
+        afiliado.setCiudad(entradaTeclado.nextInt());
+
+        System.out.println("Escoja su departamento");
+        afiliado.setDepartamento(entradaTeclado.nextInt());
+
+        Examenesgenerales examenesgenerales = new Examenesgenerales();
+
 
     }
 }
