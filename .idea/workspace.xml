@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e75bc5-5e54-4340-b4e5-2a2677c197e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/validaciones/ValidacionAfiliadoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/validaciones/ValidacionExamanesGeneralesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/validaciones/ValidacionSignoVitalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/validaciones/ValidacionAfiliado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/validaciones/ValidacionAfiliado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -36,9 +43,104 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/JUAN/IdeaProjects/ConectaAPP-SALUD&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.validaciones" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in POO">
+    <configuration name="All in POO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POO" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidacionExamanesGeneralesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.validaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.validaciones" />
+      <option name="MAIN_CLASS_NAME" value="org.example.validaciones.ValidacionExamanesGeneralesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidacionExamanesGeneralesTest.validarNombreExamen_FormatoIncorrecto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.validaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.validaciones" />
+      <option name="MAIN_CLASS_NAME" value="org.example.validaciones.ValidacionExamanesGeneralesTest" />
+      <option name="METHOD_NAME" value="validarNombreExamen_FormatoIncorrecto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidacionSignoVitalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.validaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.validaciones" />
+      <option name="MAIN_CLASS_NAME" value="org.example.validaciones.ValidacionSignoVitalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidacionSignoVitalTest.validarNombreIncorrecto_Formato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.validaciones.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.validaciones" />
+      <option name="MAIN_CLASS_NAME" value="org.example.validaciones.ValidacionSignoVitalTest" />
+      <option name="METHOD_NAME" value="validarNombreIncorrecto_Formato" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in POO" />
+        <item itemvalue="JUnit.ValidacionSignoVitalTest" />
+        <item itemvalue="JUnit.ValidacionSignoVitalTest.validarNombreIncorrecto_Formato" />
+        <item itemvalue="JUnit.ValidacionExamanesGeneralesTest" />
+        <item itemvalue="JUnit.ValidacionExamanesGeneralesTest.validarNombreExamen_FormatoIncorrecto" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,5 +151,11 @@
       <updated>1695934652213</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ConectaAPP_SALUD$All_in_POO__3_.ic" NAME="All in POO (3) Coverage Results" MODIFIED="1697137679562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ConectaAPP_SALUD$All_in_POO__2_.ic" NAME="All in POO (2) Coverage Results" MODIFIED="1697059032208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ConectaAPP_SALUD$All_in_POO.ic" NAME="All in POO Coverage Results" MODIFIED="1697148965537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ConectaAPP_SALUD$All_in_POO__1_.ic" NAME="All in POO (1) Coverage Results" MODIFIED="1697058992966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -45,6 +45,27 @@ public class Main {
 
         Examenesgenerales examenesgenerales = new Examenesgenerales();
 
+        examenesgenerales.setId(entradaTeclado.nextInt());
+
+        examenesgenerales.setFechaExamen(null);
+
+        examenesgenerales.setImagenExamen(entradaTeclado.nextLine());
+
+        examenesgenerales.setNombreExamen(entradaTeclado.nextLine());
+
+        Signovital signovital = new Signovital();
+
+        signovital.setId(null);
+
+        signovital.setFecha(null);
+
+        signovital.setNombre(null);
+
+        signovital.setMaximoNormal(null);
+
+        signovital.setMinimoNormal(null);
+
+        signovital.setUnidadMedida(null);
 
     }
 }

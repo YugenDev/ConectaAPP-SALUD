@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class ValidacionAfiliado {
 
     Utilidad utilidad= new Utilidad(); // inyeccion de dependencia
-    int nombre;
+
     public ValidacionAfiliado() {
     }
     public boolean valiadarId(Integer id) throws Exception{
