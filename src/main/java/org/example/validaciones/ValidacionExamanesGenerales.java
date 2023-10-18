@@ -1,5 +1,6 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensajes;
 import org.example.utilidades.Utilidad;
 
 public class ValidacionExamanesGenerales {
@@ -12,19 +13,20 @@ public class ValidacionExamanesGenerales {
     public boolean valiadarId(Integer id) throws Exception{
 
         if(id<0){
-            throw new Exception("Error en el ID, por favor use numeros positivos");
+            throw new Exception(Mensajes.ID_NEGATIVO.getMensaje());
         }
 
         return true;
     }
 
     public boolean validarNombreExamen(String nombreExamen) throws Exception{
+        System.out.println(nombreExamen.length());
         if (nombreExamen.length() < 10 || nombreExamen.length() > 150){
-            throw new Exception("El numero de caracteres no es correcto debe estar entre 10 y 150");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
         }
         String expresionRegular="^[a-zA-Z ]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,nombreExamen)){
-            throw new Exception("Formato invalido");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
@@ -33,7 +35,7 @@ public class ValidacionExamanesGenerales {
     public Boolean validarImagenExamen(String imagenExamen)throws Exception {
 
         if (imagenExamen.length() >= 200) {
-            throw new Exception("Limite de caracteres alcanzado");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
         }
 
         return true;

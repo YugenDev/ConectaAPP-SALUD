@@ -47,7 +47,7 @@ public class    Afiliado {
 
     public void setId(Integer id) {
         try {// intentento si no fui capaz capturo el por que
-            this.validacionAfiliado.valiadarId(id);
+            this.validacionAfiliado.validarId(id);
             this.id=id;
             System.out.println("id cargado con exito");
 

@@ -1,5 +1,6 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensajes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -34,7 +35,7 @@ class ValidacionExamanesGeneralesTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.valiadarId(idPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("Error en el ID, por favor use numeros positivos", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.ID_NEGATIVO.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -58,7 +59,7 @@ class ValidacionExamanesGeneralesTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("El numero de caracteres no es correcto debe estar entre 10 y 150", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -70,7 +71,7 @@ class ValidacionExamanesGeneralesTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("El numero de caracteres no es correcto debe estar entre 10 y 150", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_FORMATO.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -82,7 +83,71 @@ class ValidacionExamanesGeneralesTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("El numero de caracteres no es correcto debe estar entre 10 y 150", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(), resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_FORMATO.getMensaje(), resultado.getMessage());
+    }
+
+    @Test
+    public void validarNombreExamenFuncionaCorrecto() {
+        String nombreExamenPrueba = "Examen de Sangre";
+        Assertions.assertDoesNotThrow(() -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
+    }
+
+    @Test
+    public void validarNombreExamenIncorrecto_LongitudCorta() {
+        String nombreExamenPrueba = "Corto";
+        Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(), resultado.getMessage());
+    }
+
+    @Test
+    public void validarNombreExamenIncorrecto_LongitudLarga() {
+        String nombreExamenPrueba = "EsteNombreEsMuyLargoYNoDeberiaSerAceptadoPorLaValidaciondfgdfhdhdfdfhdfhhdfhhasdkjhadsadshjadshjadsdkjhasdhjagfghfhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjgjbhjjjgjjghjgjgjggjjgjghjgjggjgjgjhjjgjjjds";
+        Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(), resultado.getMessage());
+    }
+
+    @Test
+    public void validarNombreExamenIncorrecto_FormatoInvalido() {
+        String nombreExamenPrueba = "Examen 123"; // Contiene un número
+        Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarNombreExamen(nombreExamenPrueba));
+        Assertions.assertEquals(Mensajes.NOMBRES_FORMATO.getMensaje(), resultado.getMessage());
+    }
+
+    @Test
+    public void validarImagenExamenFuncionaCorrecto() {
+        String imagenExamenPrueba = "imagenDeExamen.jpg";
+        Assertions.assertDoesNotThrow(() -> validacionExamanesGenerales.validarImagenExamen(imagenExamenPrueba));
+    }
+
+    @Test
+    public void validarImagenExamenCorrecto_LimiteAlcanzado() {
+        String imagenExamenPrueba = "imagenDeExamen.jpg";
+        Assertions.assertDoesNotThrow(() -> validacionExamanesGenerales.validarImagenExamen(imagenExamenPrueba));
+    }
+
+    @Test
+    public void validarImagenExamenCorrecto() {
+        // 1. Preparar
+        String imagenExamenPrueba = "imagenDeExamen.jpg";
+
+        // 2. Ejecutar
+        Boolean resultado = Assertions.assertDoesNotThrow(() -> validacionExamanesGenerales.validarImagenExamen(imagenExamenPrueba));
+
+        // 3. Verificar
+        Assertions.assertTrue(resultado);
+    }
+
+    @Test
+    public void validarImagenExamen_LimiteAlcanzado() {
+        // 1. Preparar
+        String imagenExamenPrueba = "imagenExamenMuyLargaQueEsdjflksdhfksdhfkjdsfhkdsfhds,jfhkjsdhfksjdjhfkjdshfkjsdhfdskjhksdhfkjdsjkshdkjfhdskjfhsdkjfhsdkjfhdskjfhksdjxcedeElLimiteDeCaracteresEstablecidoPorLaValidacionfshdjjhdskhskjfhskdgsdkfgsdkjgskjdgkjsdgkjsghskdjghksghsdlhgsghldfsghksdlsdhkjsdjdsghkjsd.jpg";
+
+        // 2. Ejecutar
+        Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionExamanesGenerales.validarImagenExamen(imagenExamenPrueba));
+
+        // 3. Validar
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(), resultado.getMessage());
     }
 
 }

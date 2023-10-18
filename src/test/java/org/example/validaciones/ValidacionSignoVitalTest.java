@@ -1,5 +1,7 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensajes;
+import org.example.utilidades.Mensajes.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -34,7 +36,7 @@ class ValidacionSignoVitalTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.valiadarId(idPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("Error en el ID, por favor use numeros positivos", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_FORMATO.getMensaje(),resultado.getMessage());
     }
 
 
@@ -47,19 +49,28 @@ class ValidacionSignoVitalTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.validarNombre(nombrePrueba));
 
         // 3. Validar
-        Assertions.assertEquals("El numero de caracteres no es correcto debe estar entre 10 y 100", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_LONGITUD.getMensaje(),resultado.getMessage());
+    }
+
+    @Test
+    public void validarNombreCorrecto() {
+        // 1. Preparar
+        String nombrePrueba = "Nombre Correcto";
+
+        // 2. Ejecutar
+        Assertions.assertDoesNotThrow(() -> validacionSignoVital.validarNombre(nombrePrueba));
     }
 
     @Test
     public void validarNombreIncorrecto_Formato() {
         // 1. Preparar
-        String nombrePrueba = "Nombre123";
+        String nombrePrueba = "NombreRemeloCarameloOhsiOhsiyeah123";
 
         // 2. Ejecutar
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.validarNombre(nombrePrueba));
 
         // 3. Validar
-        Assertions.assertEquals("El numero de caracteres no es correcto debe estar entre 10 y 100", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.NOMBRES_FORMATO.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -83,7 +94,7 @@ class ValidacionSignoVitalTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.valiadarUnidadMedida(unidadMedidaPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("Error en la unidad de medida. por favor solo use numeros positivos.", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.ID_NEGATIVO.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -107,7 +118,7 @@ class ValidacionSignoVitalTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.valiadarMaximoNormal(maximoNormalPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("Error en la unidad de medida. por favor solo use numeros positivos.", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.ID_NEGATIVO.getMensaje(), resultado.getMessage());
     }
 
     @Test
@@ -131,7 +142,7 @@ class ValidacionSignoVitalTest {
         Exception resultado = Assertions.assertThrows(Exception.class, () -> validacionSignoVital.valiadarMinimoNormal(minimoNormalPrueba));
 
         // 3. Validar
-        Assertions.assertEquals("Error en la unidad de medida. por favor solo use numeros positivos.", resultado.getMessage());
+        Assertions.assertEquals(Mensajes.ID_NEGATIVO.getMensaje(), resultado.getMessage());
     }
 
 }

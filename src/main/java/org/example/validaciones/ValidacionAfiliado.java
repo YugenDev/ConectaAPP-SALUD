@@ -1,5 +1,6 @@
 package org.example.validaciones;
 
+import org.example.utilidades.Mensajes;
 import org.example.utilidades.Utilidad;
 
 import java.util.regex.Matcher;
@@ -11,21 +12,21 @@ public class ValidacionAfiliado {
 
     public ValidacionAfiliado() {
     }
-    public boolean valiadarId(Integer id) throws Exception{
+    public boolean validarId(Integer id) throws Exception{
 
         if(id<0){
-            throw new Exception("Error en el ID. por favor solo use numeros positivos.");
+            throw new Exception(Mensajes.ID_NEGATIVO.getMensaje());
         }
 
         return true;
     }
     public boolean validarNombre(String nombre) throws Exception{
         if (nombre.length() < 3 || nombre.length() > 40){
-            throw new Exception("El numero de caracteres no es correcto debe estar entre 3 y 40");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
             }
         String expresionRegular="^[a-zA-Z ]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,nombre)){
-            throw new Exception("Formato invalido");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
@@ -34,11 +35,11 @@ public class ValidacionAfiliado {
     public Boolean validarApellido(String apellidos)throws Exception{
 
         if (apellidos.length()<10 || apellidos.length()>50){
-            throw new Exception("Los apellidos ingresados no cumplen con los requisitos");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
         }
         String expresionRegular="^[a-zA-Z ]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,apellidos)){
-            throw new Exception("Formato invalido");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
@@ -46,11 +47,11 @@ public class ValidacionAfiliado {
 
     public Boolean validarDocumento(String documento)throws Exception{
         if (documento.length()<7 || documento.length()>10){
-            throw new Exception("Documento con longitud invalida");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
         }
         String expresionRegular="^[0-9]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,documento)){
-            throw new Exception("Formato invalido");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
@@ -75,7 +76,7 @@ public class ValidacionAfiliado {
     public boolean validarCorreoElectronico(String correoElectronico) throws Exception{
         String expresionRegular="^[A-Za-z0-9+_.-]+@(.+)$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,correoElectronico)){
-            throw new Exception("No cumple con el formato de correo electronico");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
@@ -83,11 +84,11 @@ public class ValidacionAfiliado {
 
     public Boolean validarTelefono(String telefono)throws Exception{
         if (telefono.length()!=10){
-            throw new Exception("Cantidad de caracteres invalida");
+            throw new Exception(Mensajes.NOMBRES_LONGITUD.getMensaje());
         }
         String expresionRegular="^[0-9 ]+$";
         if (!this.utilidad.buscarCoincidencia(expresionRegular,telefono)){
-            throw new Exception("Caracteres no admitidos, por favor solo utilice numeros");
+            throw new Exception(Mensajes.NOMBRES_FORMATO.getMensaje());
         }
         return true;
 
